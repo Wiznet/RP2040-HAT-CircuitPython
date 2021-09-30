@@ -1,0 +1,192 @@
+
+
+
+<a name="Ethernet_Example_Getting_Started"></a>
+
+Ethernet Example Getting Started [Circuitpython]
+===========================
+
+
+> These sections will guide you through a series of steps from configuring development environment to running ethernet examples using the **WIZnet's ethernet products**.
+
+- [Ethernet Example Getting Started [Circuitpython]](#ethernet-example-getting-started-circuitpython)
+- [Development environment configuration](#development-environment-configuration)
+  - [STEP1 : **Installing Circuitpython**](#step1--installing-circuitpython)
+  - [STEP2 : **Setup WIZnet Ethernet Libraray**](#step2--setup-wiznet-ethernet-libraray)
+- [Hardware requirements](#hardware-requirements)
+- [Ethernet example structure](#ethernet-example-structure)
+- [Ethernet example testing](#ethernet-example-testing)
+
+
+
+
+
+<a name="development_environment_configuration"></a>
+
+# Development environment configuration
+
+> To test the ethernet examples, the development environment must be configured to use Raspberry Pi Pico. The ethernet examples were tested by configuring the development environment for **Windows**. Please refer to the '**9.2. Building on MS Windows**' section of '**Getting started with Raspberry Pi Pico**' document below and configure accordingly.
+
+![][link-CircuitPython]
+
+## STEP1 : [**Installing Circuitpython**][link-Installing Circuitpython]
+
+Install `CircuitPython` on Raspberry Pi Pico by referring to the link above.
+
+ - [https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython)
+
+It makes it easier than ever to get prototyping by requriring no upfront desktop software downloads. Simply copy and edit files on the `CIRCUITPY` drive to iterate.
+
+
+<p align="center"> <image src= "./img/START/Library000.png"></p>
+
+You edit and save your code on code.py, run your code on the board.
+
+Let's test "LED on" and "LED off" code. Actually, just visit the below page to blink led on your rpi pico board.
+
+[https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/blinky-and-a-button](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/blinky-and-a-button)
+
+
+## STEP2 : [**Setup WIZnet Ethernet Libraray**][link-Setup WIZnet Libraray]
+
+1. Copy the [**WIZnet library**][link-library] into the lib folder inside the Raspberry Pi Pico.
+   [https://learn.adafruit.com/ethernet-for-circuitpython/circuitpython-setup](https://learn.adafruit.com/ethernet-for-circuitpython/circuitpython-setup)
+   
+   Before continuing, make sure your board's lib folder has at least the following files and folders copied over:
+   
+   `adafruit_wiznet5k`
+   
+   `adafruit_bus_device`
+   
+   `adafruit_requests.mpy`
+
+<p align="center"> <image src= "./img/START/Library001.png"></p>
+
+2. you need to open `PuTTY`. Under Connection type: choose the button next to Serial.
+   In the box under Serial line, enter the serial port you found that your board is using. In the box under Speed, enter `115200`. 
+
+<p align="center"> <image src= "./img/START/Library004.png"></p>
+
+3. To see your COM port number, please open `Device Manager` on your Windows.
+<p align="center"> <image src= "./img/START/Library005.png"></p>
+
+4. see the terminal screen as follows. If you connect the WIZnet Ethernet HAT, you can see the `Chip Version:W5100S or W5500`
+<p align="center"> <image src= "./img/START/Library006.png"></p>
+
+<a name="hardware_requirements"></a>
+
+# Hardware requirements
+
+> The ethernet examples use **Raspberry Pi Pico** and **WIZnet Ethernet HAT** ethernet I/O module built on WIZnet's [**W5100S**][link-w5100s] ethernet chip or **W5100S-EVB-Pico** ethernet I/O module built on [**RP2040**][link-rp2040] and WIZnet's [**W5100S**][link-w5100s] ethernet chip.
+
+| Image| Name| Etc |
+|-|-|-|
+|<image src= "./img/START/raspberrypi_pico.PNG" width="50px" height="50px">|[**Raspberry Pi Pico**][link-raspberry_pi_pico]|[Pico Document](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)|
+ |<image src= "./img/START/EthernetHAT.png" width="70px" height="50px">|[**WIZnet Ethernet HAT**][link-wiznet_ethernet_hat]|[Ethernet HAT Datasheet](https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat)|
+
+> ### Pin Diagram
+
+
+![][link-PICO_Shield]
+  
+  
+<a name="ethernet_example_structure"></a>
+
+# Ethernet example structure
+
+Ethernet examples are available at '**RP2040-HAT-CircuitPython/example/**' directory. As of now, following examples are provided.
+
+- [**DHCP**][link-DHCP]
+- [**Loopback**][link-loopback]
+- [**DNS**][link-DNS]
+- [**HTTP**][link-HTTP]
+  - [WebServer][link-WebServer]
+  - [WebClient][link-WebClient]
+- [**MQTT**][link-MQTT]
+  - [Publish][link-MQTT_Pub]
+  - [Subscribe][link-MQTT_Sub]
+- [**SNTP**][link-SNTP]
+- [**FTP**][link-FTP]
+- [**Adafruit IO**][link-adafruit_io]
+  - [UpLink][link-uplink]
+  - [DownLink][link-downlink]
+
+
+<a name="Ethernet_example_testing"></a>
+
+# Ethernet example testing
+
+
+# Documentation
+
+Documentation for WIZnet Ethernet HAT and Raspberry pi pico board
+## Raspberry Pi Pico
+ [**Raspberry Pi Pico Datasheet**](https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf)
+
+  An RP2040-based microcontroller board
+ 
+ [**Getting started with Raspberry Pi Pico**](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)
+ 
+ C/C++ development with Raspberry Pi Pico and other RP2040-based microcontroller boards
+
+## WIZnet Ethernet HAT & EVB
+ [**WIZnet Ethernet HAT**](https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat)
+
+ [**W5100S-EVB-Pico**](https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico)
+
+> Please refer to 'README.md' in each examples directory to find detail guide for testing ethernet examples.
+
+
+
+
+
+<!--
+
+Link
+
+-->
+
+[link-CircuitPython]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/START/Circuitpython.png
+[link-PICO]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/START/PICO.jpg
+[link-raspberrypi_pico]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/START/raspberrypi_pico.png
+[link-HAT]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/START/HAT.png"
+
+
+
+[link-Installing Circuitpython]:https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython
+[link-Setup WIZnet Libraray]:https://learn.adafruit.com/ethernet-for-circuitpython/circuitpython-setup
+
+
+
+[link-w5100s]: https://docs.wiznet.io/Product/iEthernet/W5100S/overview
+[link-rp2040]: https://www.raspberrypi.org/products/rp2040/
+[link-PICO_Shield]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/START/PICO_Shield.jpg
+
+
+[link-raspberry_pi_pico]: https://www.raspberrypi.org/products/raspberry-pi-pico
+[link-wiznet_ethernet_hat]: https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat
+
+[link-library]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/lib
+
+
+
+[link-DHCP]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/DHCP
+[link-Network]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/Network
+[link-loopback]:  https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/Loopback
+[link-DNS]:  https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/DNS
+[link-WebServer]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/HTTP/Webserver
+[link-HTTP]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/HTTP
+[link-WebClient]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/HTTP/Webclient
+[link-MQTT]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/MQTT
+[link-MQTT_Pub]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/MQTT/Publish
+[link-MQTT_Sub]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/MQTT/Subscribe
+[link-SNTP]:  https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/SNTP
+[link-FTP]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/FTP_Client
+[link-adafruit_io]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/Adafruit_IO
+[link-uplink]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/Adafruit_IO/UpLink
+[link-downlink]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/tree/main/example/Adafruit_IO/DownLink
+
+
+
+
+_[▲ Back to Top](#Ethernet_Example_Getting_Started)_ 

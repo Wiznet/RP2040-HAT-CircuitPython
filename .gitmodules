@@ -1,0 +1,3 @@
+[submodule "Total_backup/pico-W5500"]
+	path = Total_backup/pico-W5500
+	url = https://github.com/bjnhur/pico-W5500
