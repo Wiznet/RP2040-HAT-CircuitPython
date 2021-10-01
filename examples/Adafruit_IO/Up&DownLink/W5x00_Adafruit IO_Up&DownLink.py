@@ -13,8 +13,8 @@ from adafruit_io.adafruit_io import IO_MQTT
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
 secrets = {
-    'aio_username' : 'Louiswiz',   ### Wirte Username here ###
-    'aio_key' : 'aio_cCrX08dF8SOAUNDQCMCGOPvVVrGX'  ### Write Active Key here ###
+    'aio_username' : '*****',   ### Wirte Username here ###
+    'aio_key' : '*****'  ### Write Active Key here ###
     }
 
 # Set your Adafruit IO Username and Key in secrets.py
@@ -77,7 +77,7 @@ print("My IP address is:", eth.pretty_ip(eth.ip_address))
 ### Topic Setup ###
 # Adafruit IO-style Topic
 # Use this topic if you'd like to connect to io.adafruit.com
-mqtt_topic = secrets["aio_username"] + '/feeds/test'
+# mqtt_topic = secrets["aio_username"] + '/feeds/test'
 
 ### Code ###
 # Define callback methods which are called when events occur
