@@ -30,6 +30,6 @@ Please refer to [getting_stared.md][link-getting_started] for examples usage.
 Link
 -->
 
-[link-Shield]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/main/img/START/PICO%20Shield.jpg
+[link-Shield]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PICO%20Shield.jpg
 [link-getting_started]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/Ethernet%20Example%20Getting%20Started%20%5BCircuitpython%5D.md
 
