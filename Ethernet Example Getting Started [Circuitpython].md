@@ -146,10 +146,10 @@ Link
 
 -->
 
-[link-CircuitPython]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/main/images/START/Circuitpython.png
-[link-PICO]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/main/images/START/PICO.jpg
-[link-raspberrypi_pico]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/main/images/START/raspberrypi_pico.png
-[link-HAT]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/main/images/START/HAT.png"
+[link-CircuitPython]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/Circuitpython.png
+[link-PICO]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PICO.jpg
+[link-raspberrypi_pico]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/raspberrypi_pico.png
+[link-HAT]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/HAT.png"
 
 
 
@@ -160,31 +160,31 @@ Link
 
 [link-w5100s]: https://docs.wiznet.io/Product/iEthernet/W5100S/overview
 [link-rp2040]: https://www.raspberrypi.org/products/rp2040/
-[link-PICO_Shield]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/main/images/START/PICO_Shield.jpg
+[link-PICO_Shield]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PICO_Shield.jpg
 
 
 [link-raspberry_pi_pico]: https://www.raspberrypi.org/products/raspberry-pi-pico
 [link-wiznet_ethernet_hat]: https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat
 
-[link-library]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/lib
+[link-library]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/lib
 
 
 
-[link-DHCP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/DHCP
-[link-Network]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/Network
-[link-loopback]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/Loopback
-[link-DNS]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/DNS
-[link-WebServer]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/HTTP/Webserver
-[link-HTTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/HTTP
-[link-WebClient]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/HTTP/Webclient
-[link-MQTT]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/MQTT
-[link-MQTT_Pub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/MQTT/Publish
-[link-MQTT_Sub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/MQTT/Subscribe
-[link-SNTP]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/SNTP
-[link-FTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/FTP_Client
-[link-adafruit_io]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/Adafruit_IO
-[link-uplink]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/Adafruit_IO/UpLink
-[link-downlink]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/main/examples/Adafruit_IO/DownLink
+[link-DHCP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/DHCP
+[link-Network]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Network
+[link-loopback]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Loopback
+[link-DNS]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/DNS
+[link-WebServer]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/HTTP/Webserver
+[link-HTTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/HTTP
+[link-WebClient]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/HTTP/Webclient
+[link-MQTT]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT
+[link-MQTT_Pub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/Publish
+[link-MQTT_Sub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/Subscribe
+[link-SNTP]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/SNTP
+[link-FTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/FTP_Client
+[link-adafruit_io]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO
+[link-uplink]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO/UpLink
+[link-downlink]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO/DownLink
 
 
 
