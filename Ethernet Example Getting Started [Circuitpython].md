@@ -81,7 +81,7 @@ Let's test "LED on" and "LED off" code. Actually, just visit the below page to b
 
 | Image| Name| Etc |
 |-|-|-|
-|<image src= "./images/START/raspberrypi_pico.PNG" width="50px" height="50px">|[**Raspberry Pi Pico**][link-raspberry_pi_pico]|[Pico Document](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)|
+|<image src= "./images/START/raspberrypi_pico.png" width="50px" height="50px">|[**Raspberry Pi Pico**][link-raspberry_pi_pico]|[Pico Document](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)|
  |<image src= "./images/START/EthernetHAT.png" width="70px" height="50px">|[**WIZnet Ethernet HAT**][link-wiznet_ethernet_hat]|[Ethernet HAT Datasheet](https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat)|
 
 > ### Pin Diagram
