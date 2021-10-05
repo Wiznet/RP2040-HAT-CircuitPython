@@ -38,7 +38,7 @@ Install `CircuitPython` on Raspberry Pi Pico by referring to the link above.
 It makes it easier than ever to get prototyping by requriring no upfront desktop software downloads. Simply copy and edit files on the `CIRCUITPY` drive to iterate.
 
 
-<p align="center"> <image src= "./img/START/Library000.png"></p>
+<p align="center"> <image src= "./images/START/Library000.png"></p>
 
 You edit and save your code on code.py, run your code on the board.
 
@@ -60,18 +60,18 @@ Let's test "LED on" and "LED off" code. Actually, just visit the below page to b
    
    `adafruit_requests.mpy`
 
-<p align="center"> <image src= "./img/START/Library001.png"></p>
+<p align="center"> <image src= "./images/START/Library001.png"></p>
 
 2. you need to open `PuTTY`. Under Connection type: choose the button next to Serial.
    In the box under Serial line, enter the serial port you found that your board is using. In the box under Speed, enter `115200`. 
 
-<p align="center"> <image src= "./img/START/Library004.png"></p>
+<p align="center"> <image src= "./images/START/Library004.png"></p>
 
 3. To see your COM port number, please open `Device Manager` on your Windows.
-<p align="center"> <image src= "./img/START/Library005.png"></p>
+<p align="center"> <image src= "./images/START/Library005.png"></p>
 
 4. see the terminal screen as follows. If you connect the WIZnet Ethernet HAT, you can see the `Chip Version:W5100S or W5500`
-<p align="center"> <image src= "./img/START/Library006.png"></p>
+<p align="center"> <image src= "./images/START/Library006.png"></p>
 
 <a name="hardware_requirements"></a>
 
