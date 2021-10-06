@@ -10,6 +10,8 @@
 ### &#10004;[**Tera Term**][link-tera_term]  or  &#10004; [**Hercules**][link-hercules]
 
 
+
+
 ## Step 2: Prepare hardware
 
 1. Combine WIZnet Ethernet HAT with Raspberry Pi Pico.
@@ -24,7 +26,9 @@ If you use W5100S-EVB-Pico, you can skip '1. Combine...'
 
 ## Step 3: Setup Webserver Example
 
-To test the **Webserver example**, minor settings shall be done in code.
+> To test the **Webserver example**, minor settings shall be done in code.
+
+
 
 1. Setup SPI and Reset pin.
 
@@ -78,7 +82,21 @@ My IP address is $IPADDRESS<br>
 '''
 ```
 
-3. Copy **Webserver code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
+4. Run Pico to open the web server.
+
+```python
+# Start the server
+wsgiServer.start()
+
+while True:
+    # Our main loop where we have the server poll for incoming requests
+    wsgiServer.update_poll()
+    # Maintain DHCP lease
+    eth.maintain_dhcp_lease()
+    # Could do any other background tasks here, like reading sensors
+```
+
+5. Copy **Webserver code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
 
 
 
@@ -105,9 +123,11 @@ My IP address is $IPADDRESS<br>
 ![][link-webserver_6]
 
 
+
+
+
+
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
-
-
 
 
 
@@ -118,20 +138,20 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
-
-[link-port]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/PORT.jpg
-[link-terminal]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Terminal.jpg
+[link-http]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/HTTP_0.jpg
 
 
 
+[link-port]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/PORT.jpg
+[link-terminal]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Terminal.jpg
 
 
-[link-http]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/HTTP_0.jpg
-[link-http_0]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/HTTP.png
-[link-webserver_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webserver_1.PNG
-[link-webserver_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webserver_2.PNG
-[link-webserver_3]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webserver_3.PNG
-[link-webserver_4]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webserver_4.PNG
-[link-webserver_5]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webserver_5.PNG
-[link-webserver_6]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webserver_6.jpg
+
+[link-http_0]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/HTTP.png
+[link-webserver_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webserver_1.PNG
+[link-webserver_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webserver_2.PNG
+[link-webserver_3]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webserver_3.PNG
+[link-webserver_4]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webserver_4.PNG
+[link-webserver_5]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webserver_5.PNG
+[link-webserver_6]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webserver_6.jpg
 
