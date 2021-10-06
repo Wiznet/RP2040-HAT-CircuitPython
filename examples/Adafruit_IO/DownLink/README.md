@@ -26,7 +26,9 @@ If you use W5100S-EVB-Pico, you can skip '1. Combine...'
 
 ## Step 3: Setup Adafruit IO Downlink Example
 
-To test the **Adafruit IO Downlink**, minor settings shall be done in code.
+> To test the **Adafruit IO Downlink**, minor settings shall be done in code.
+
+
 
 1. Setup SPI and Reset pin.
 
@@ -47,12 +49,12 @@ W5x00_RSTn = board.GP20
 eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 ```
 
-3. Get `[Username]` and `[Active Key]` by referring to the link and add them to the **Secrets**.
+3. Get [Username] and [Active Key] by referring to the link and add them to the **Secrets**.
 
 ```python
 secrets = {
     'aio_username' : '*****',  ### Wirte your Username here ###
-    'aio_key' :  '*****',  ### Write your Active Key here ###
+    'aio_key' : 	 '*****',  ### Write your Active Key here ###
     }
 ```
 
@@ -161,19 +163,18 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-adafruit_io]: https://io.adafruit.com/
-[link-adafruit_start]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/example/Adafruit_IO/Getting%20Start%20Adafruit%20IO.md
+[link-adafruit_start]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/Adafruit_IO/Getting%20Start%20Adafruit%20IO.md
 
 
 
-[link-adafruit_logo_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_logo_2.png
-[link-port]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/PORT.jpg
-[link-terminal]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Terminal.jpg
-[link-adafruit_downlink_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_downlink_1.PNG
-[link-adafruit_downlink_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_downlink_2.PNG
-[link-adafruit_downlink_3]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_downlink_3.PNG
-[link-adafruit_downlink_4]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_downlink_4.PNG
-[link-adafruit_downlink_6]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_downlink_6.PNG
-[link-adafruit_downlink_7]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_downlink_7.PNG
-
+[link-adafruit_logo_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_logo_2.png
+[link-port]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/PORT.jpg
+[link-terminal]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Terminal.jpg
+[link-adafruit_downlink_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_downlink_1.PNG
+[link-adafruit_downlink_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_downlink_2.PNG
+[link-adafruit_downlink_3]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_downlink_3.PNG
+[link-adafruit_downlink_4]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_downlink_4.PNG
+[link-adafruit_downlink_6]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_downlink_6.PNG
+[link-adafruit_downlink_7]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_downlink_7.PNG
 
 
