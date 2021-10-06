@@ -77,7 +77,7 @@ W5x00_RSTn = board.GP20
 
    
 
-3. Copy **code** to **code.py** on your RPi Pico and save. This DHCP enable code sets IP to 192.168.1.100. Make sure that PC is configured in same subnet 192.168.1.xxx.
+3. Copy **DHCP code** to **code.py** on your RPi Pico and save. This DHCP enable code sets IP to 192.168.1.100. Make sure that PC is configured in same subnet 192.168.1.xxx.
 
 
 
@@ -87,11 +87,11 @@ W5x00_RSTn = board.GP20
 
 ![][link-port]![link-terminal]
 
-2. Allocates IP address to Statistically **without DHCP**. Open the command on your PC and conduct the PING test.
+2. Allocates IP address to Statistically **without DHCP**. Open the command on your PC and conduct the **PING test**.
 
 ![][link-DHCP_1]![][link-DHCP_2]
 
-3. Automatic IP address assigned **using DHCP**. Open the command on your PC and conduct the PING test.
+3. Automatic IP address assigned **using DHCP**. Open the command on your PC and conduct the **PING test**.
 
 ![][link-DHCP_3]![][link-DHCP_4]
 
@@ -105,11 +105,14 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
-[link-port]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PORT.jpg
-[link-Terminal]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/Terminal.jpg
-[link-DHCP]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/DHCP.png
-[link-DHCP_0]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PICO_DHCP_0.png
-[link-DHCP_1]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PICO_DHCP_1.PNG
-[link-DHCP_2]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PICO_DHCP_2.PNG
-[link-DHCP_3]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PICO_DHCP_3.PNG
-[link-DHCP_4]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PICO_DHCP_4.PNG
+[link-DHCP]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/DHCP.png
+
+
+
+[link-port]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/PORT.jpg
+[link-Terminal]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/Terminal.jpg
+[link-DHCP_0]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/PICO_DHCP_0.png
+[link-DHCP_1]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/PICO_DHCP_1.PNG
+[link-DHCP_2]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/PICO_DHCP_2.PNG
+[link-DHCP_3]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/PICO_DHCP_3.PNG
+[link-DHCP_4]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DHCP/PICO_DHCP_4.PNG
