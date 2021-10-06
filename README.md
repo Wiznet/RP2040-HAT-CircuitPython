@@ -1,8 +1,11 @@
 # WIZnet Ethernet HAT & Raspberry Pi Pico [RP2040]
 
 [Overview](#overview)
+
 [CircuitPython Getting Started](#start)
+
 [Directory Structure](#directory )
+
 
 <a name="overview"></a>
 
@@ -12,6 +15,7 @@ WIZnet W5100S Ethernet Shield includes W5100S chip - hardwired TCP/IP internet c
 
 ![][link-Shield]
 
+<a name="start"></a>
 # CircuitPython Getting Started
 
 Please refer to [getting_stared.md][link-getting_started] for examples usage.
