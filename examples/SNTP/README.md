@@ -24,7 +24,9 @@ If you use W5x00-EVB-Pico, you can skip '1. Combine...'
 
 ## Step 3: Setup SNTP Example
 
-To test the **SNTP example**, minor settings shall be done in code.
+> To test the **SNTP example**, minor settings shall be done in code.
+
+
 
 1. Import **NTP Library** and setup configuration.
 
@@ -72,7 +74,7 @@ print("The date is %s %d/%d/%d" %(days[cal.tm_wday], cal.tm_mday,cal.tm_mon,cal.
 print("The time is %d:%02d:%02d" %(cal.tm_hour,cal.tm_min,cal.tm_sec))
 ```
 
-5. Copy **code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
+5. Copy **SNTP code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
 
 
 
@@ -96,7 +98,10 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
-[link-NTP]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/SNTP/NTP.jpg
-[link-port]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PORT.jpg
-[link-Terminal]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/Terminal.jpg
-[link-SNTP]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/SNTP/SNTP_1.PNG
+[link-NTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/SNTP/NTP.jpg
+
+
+
+[link-port]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/SNTP/PORT.jpg
+[link-Terminal]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/SNTP/Terminal.jpg
+[link-SNTP]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/SNTP/SNTP_1.PNG
