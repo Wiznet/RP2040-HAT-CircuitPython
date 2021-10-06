@@ -130,13 +130,13 @@ Link
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-mosquitto]: https://mosquitto.org/download/
 
-[link-port]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/PORT.jpg
-[link-terminal]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/Terminal.jpg
-[link-mqtt]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/MQTT.png
-[link-mqtt_0]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/MQTT_0.jpg
-[link-mqtt_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/MQTT_pub_1.PNG
-[link-mqtt_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/MQTT_pub_2.PNG
-[link-mqtt_3]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/MQTT_pub_3.PNG
-[link-mqtt_conf]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/MQTT/MQTT_conf.png
+[link-port]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/PORT.jpg
+[link-terminal]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/Terminal.jpg
+[link-mqtt]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/MQTT.png
+[link-mqtt_0]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/MQTT_0.jpg
+[link-mqtt_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/MQTT_pub_1.PNG
+[link-mqtt_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/MQTT_pub_2.PNG
+[link-mqtt_3]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/MQTT_pub_3.PNG
+[link-mqtt_conf]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/MQTT/MQTT_conf.png
 [link-authentication_methods]: https://mosquitto.org/documentation/authentication-methods/
 
