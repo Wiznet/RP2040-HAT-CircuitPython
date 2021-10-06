@@ -26,7 +26,9 @@ If you use W5100S-EVB-Pico, you can skip '1. Combine...'
 
 ## Step 3: Setup WebClinet Example
 
-To test the **Webclient example**, minor settings shall be done in code.
+> To test the **Webclient example**, minor settings shall be done in code.
+
+
 
 1. Setup SPI port and Reset pin.
 
@@ -47,14 +49,26 @@ W5x00_RSTn = board.GP20
 eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 ```
 
-3. HTML request, Access HTML URL and Json URL
+3. HTML request, Access **HTML URL** and **Json URL**
 
 ```python
 TEXT_URL = "http://wifitest.adafruit.com/testwifi/index.html"
 JSON_URL = "http://api.coindesk.com/v1/bpi/currentprice/USD.json"
 ```
 
-4. Copy **Webclient code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
+4. Run Pico to open the web client.
+
+```python
+##run Webclient
+while True:
+    # Maintain DHCP lease
+    eth.maintain_dhcp_lease()
+
+    led.value = not led.value
+    time.sleep(1)
+```
+
+5. Copy **Webclient code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
 
 
 
@@ -91,14 +105,14 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
-
-[link-port]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/PORT.jpg
-[link-terminal]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Terminal.jpg
-
-
-
-[link-http]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/HTTP_0.jpg
+[link-http]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/HTTP_0.jpg
 [link-http_0]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/HTTP.png
-[link-webclient_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webclient_1.PNG
-[link-webclient_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webclient_2.PNG
-[link-webclient_3]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/HTTP/Webclient_3.PNG
+
+
+
+[link-port]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/PORT.jpg
+[link-terminal]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Terminal.jpg
+
+[link-webclient_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webclient_1.PNG
+[link-webclient_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webclient_2.PNG
+[link-webclient_3]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/HTTP/Webclient_3.PNG
