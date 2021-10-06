@@ -1,10 +1,10 @@
-# How to Test Loopback Example
+# How to Test LoopBack Example
 
 ![][link-loopback_0]
 
 ## Step 1: Prepare Software
 
-> The following serial terminal program is required for **loopback** test, download and install from below links.
+> The following serial terminal program is required for **LoopBack** test, download and install from below links.
 
 ### &#10004;[**Tera Term**][link-tera_term]  or  &#10004; [**Hercules**][link-hercules]
 
@@ -22,9 +22,11 @@ If you use W5100S-EVB-Pico, you can skip '1. Combine...'
 
 
 
-## Step 3: Setup Loopback Example
+## Step 3: Setup LoopBack Example
 
-To test the **Loopback example**, minor settings shall be done in code.
+> To test the **LoopBack example**, minor settings shall be done in code.
+
+
 
 1. Setup SPI and Reset pin.
 
@@ -45,7 +47,7 @@ W5x00_RSTn = board.GP20
 eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 ```
 
-3. Copy **Loopback code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
+3. Copy **LoopBack code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
 
 
 
@@ -79,17 +81,23 @@ eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 
 
 
+
+
 <!--
 Link
 -->
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
-
-[link-port]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/PORT.jpg
-[link-terminal]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/Terminal.jpg
 [link-loopback_0]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/Loopback.jpg
-[link-loopback_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/PICO_Loopback_1.jpg
-[link-loopback_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/PICO_Loopback_2.jpg
-[link-loopback_3]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/PICO_Loopback_3.jpg
-[link-loopback_4]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/PICO_Loopback_4.jpg
+
+
+
+[link-port]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/LOOPBACK/PORT.jpg
+[link-terminal]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/LOOPBACK/Terminal.jpg
+
+
+[link-loopback_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/LOOPBACK/PICO_Loopback_1.jpg
+[link-loopback_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/LOOPBACK/PICO_Loopback_2.jpg
+[link-loopback_3]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/LOOPBACK/PICO_Loopback_3.jpg
+[link-loopback_4]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/LOOPBACK/PICO_Loopback_4.jpg
