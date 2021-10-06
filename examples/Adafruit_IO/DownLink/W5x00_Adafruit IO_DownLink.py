@@ -30,7 +30,7 @@ SPI0_CSn = board.GP17
 #Reset
 W5x00_RSTn = board.GP20
 
-print("Wiznet5k MQTT Test (DHCP)")
+print("Wiznet5k Adafruit Downlink Test (DHCP)")
 # Setup your network configuration below
 # random MAC, later should change this value on your vendor ID
 MY_MAC = (0x00, 0x01, 0x02, 0x03, 0x04, 0x05)
