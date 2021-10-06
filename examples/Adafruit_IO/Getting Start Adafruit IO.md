@@ -12,6 +12,10 @@
 
 ## Start Adafruit IO
 
+
+
+
+
 > ## Create an account at adafruit.com
 
 Please refer to the following link to proceed with the subscription. Some services are free of charge.
@@ -78,12 +82,12 @@ Link
 
 [link-adafruit_io]: https://learn.adafruit.com/welcome-to-adafruit-io/overview
 [link-sign up]: https://accounts.adafruit.com/users/sign_in
-[link-logo]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_logo.png
-[link-account]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/account.png
-[link-menu]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_menu.png
-[link-token]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_token.png
-[link-feed_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_feed_1.png
-[link-feed_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_feed_2.png
-[link-dashboard_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_dashboard_1.png
-[link-dashboard_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_dashboard_2.png
-[link-dashboard_3]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/Adaruit_io/Adafruit_dashboard_3.png
+[link-logo]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_logo.png
+[link-account]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/account.png
+[link-menu]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_menu.png
+[link-token]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_token.png
+[link-feed_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_feed_1.png
+[link-feed_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_feed_2.png
+[link-dashboard_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_dashboard_1.png
+[link-dashboard_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_dashboard_2.png
+[link-dashboard_3]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/Adaruit_io/Adafruit_dashboard_3.png
