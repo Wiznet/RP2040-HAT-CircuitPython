@@ -134,6 +134,8 @@ C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t Dinner -m "D"
 
 
 
+**user manual in video** - https://youtu.be/vtMPr-vCbEo
+
 ## Appendix
 
 - In Mosquitto versions earlier than 2.0 the default is to allow clients to connect without authentication. In 2.0 and up, you must choose your authentication options explicitly before clients can connect. Therefore, if you are using version 2.0 or later, refer to following link to setup 'mosquitto.conf' in the directory where Mosquitto is installed.
