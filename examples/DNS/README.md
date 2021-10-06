@@ -11,6 +11,8 @@
 ### &#10004;[**Tera Term**][link-tera_term]  or  &#10004; [**Hercules**][link-hercules]
 
 
+
+
 ## Step 2: Prepare hardware
 
 1. Combine WIZnet Ethernet HAT with Raspberry Pi Pico.
@@ -25,7 +27,9 @@ If you use W5100S-EVB-Pico, you can skip '1. Combine...'
 
 ## Step 3: Setup DNS Example
 
-To test the **DNS example**, minor settings shall be done in code.
+> To test the **DNS example**, minor settings shall be done in code.
+
+
 
 1. Setup SPI and Reset pin.
 
@@ -59,7 +63,7 @@ eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 print("DNS Translate : DNS Server        -->> %s" % eth.pretty_ip(eth.get_host_by_name("kns.kornet.net")))  #DNS Domain
 ```
 
-4. Copy **code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
+4. Copy **DNS code** to **code.py** on your RPi Pico and save. Make sure that PC is configured in same subnet 192.168.1.xxx.
 
 
 
@@ -74,7 +78,12 @@ print("DNS Translate : DNS Server        -->> %s" % eth.pretty_ip(eth.get_host_b
 ![][link-DNS_2]
 
 
+
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
+
+
+
+
 
 <!--
 Link
@@ -82,10 +91,12 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
-[link-port]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/PORT.jpg
-[link-Terminal]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DHCP/Terminal.jpg
+[link-DNS]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DNS/DNS.png
 
 
-[link-DNS]:https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DNS/DNS.png
-[link-DNS_1]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DNS/PICO_DNS_0.png
-[link-DNS_2]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/DNS/PICO_DNS.PNG
+
+[link-port]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DNS/PORT.jpg
+[link-Terminal]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DNS/Terminal.jpg
+
+[link-DNS_1]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DNS/PICO_DNS_0.png
+[link-DNS_2]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/DNS/PICO_DNS.PNG
