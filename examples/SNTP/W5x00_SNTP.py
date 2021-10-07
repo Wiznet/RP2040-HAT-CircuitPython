@@ -5,7 +5,7 @@ import time
 import adafruit_requests as requests
 from adafruit_wiznet5k.adafruit_wiznet5k import *
 import adafruit_wiznet5k.adafruit_wiznet5k_socket as socket
-from adafruit_wiznet5k.wiznet5k_ntp import NTP
+from adafruit_wiznet5k.adafruit_wiznet5k_ntp import NTP
 import adafruit_wiznet5k.adafruit_wiznet5k_dns as dns
 days = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
              
