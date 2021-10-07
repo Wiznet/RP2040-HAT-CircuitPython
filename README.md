@@ -1,10 +1,10 @@
 # WIZnet Ethernet HAT & Raspberry Pi Pico [RP2040]
 
-- :blue_book:[Overview](#overview)
+- [Overview](#overview)
 
-- :rocket:[CircuitPython Getting Started](#start)
+- [CircuitPython Getting Started](#start)
 
-- :black_nib:[Directory Structure](#directory )
+- [Directory Structure](#directory )
 
 
 <a name="overview"></a>
