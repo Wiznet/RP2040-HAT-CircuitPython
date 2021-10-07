@@ -17,7 +17,7 @@ WIZnet W5100S Ethernet Shield includes W5100S chip - hardwired TCP/IP internet c
 
 <a name="start"></a>
 
-# :newspaper:CircuitPython Getting Started
+# :rocket:CircuitPython Getting Started
 
 Please refer to [getting_stared.md][link-getting_started] for examples usage.
 ![][link-getting_image]
