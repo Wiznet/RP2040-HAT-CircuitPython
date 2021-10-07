@@ -3,27 +3,27 @@
 
 <a name="Ethernet_Example_Getting_Started"></a>
 
-Ethernet Example Getting Started [Circuitpython]
+:rocket:Ethernet Example Getting Started [Circuitpython]
 ===========================
 
 
 > These sections will guide you through a series of steps from configuring development environment to running ethernet examples using the **WIZnet's ethernet products**.
 
-- [Ethernet Example Getting Started [Circuitpython]](#ethernet-example-getting-started-circuitpython)
-- [Development environment configuration](#development-environment-configuration)
+- [:rocket:Ethernet Example Getting Started [Circuitpython]](#ethernet-example-getting-started-circuitpython)
+- [:bulb:Development environment configuration](#development-environment-configuration)
   - [STEP1 : **Installing Circuitpython**](#step1--installing-circuitpython)
   - [STEP2 : **Setup WIZnet Ethernet Libraray**](#step2--setup-wiznet-ethernet-libraray)
-- [Hardware requirements](#hardware-requirements)
-- [Ethernet example structure](#ethernet-example-structure)
-- [Ethernet example testing](#ethernet-example-testing)
+- :hammer:[Hardware requirements](#hardware-requirements)
+- [:open_file_folder:Ethernet example structure](#ethernet-example-structure)
+- :pushpin:[Ethernet example testing](#ethernet-example-testing)
 
-
+- [:books:Documentation](#Documentation)
 
 
 
 <a name="development_environment_configuration"></a>
 
-# Development environment configuration
+# :bulb:Development environment configuration
 
 > To test the ethernet examples, the development environment must be configured to use Raspberry Pi Pico. The ethernet examples were tested by configuring the development environment for **Windows**. Please refer to the '**9.2. Building on MS Windows**' section of '**Getting started with Raspberry Pi Pico**' document below and configure accordingly.
 
@@ -75,7 +75,7 @@ Let's test "LED on" and "LED off" code. Actually, just visit the below page to b
 
 <a name="hardware_requirements"></a>
 
-# Hardware requirements
+# :hammer:Hardware requirements
 
 > The ethernet examples use **Raspberry Pi Pico** and **WIZnet Ethernet HAT** ethernet I/O module built on WIZnet's [**W5100S**][link-w5100s] ethernet chip or **W5100S-EVB-Pico** ethernet I/O module built on [**RP2040**][link-rp2040] and WIZnet's [**W5100S**][link-w5100s] ethernet chip.
 
@@ -86,13 +86,13 @@ Let's test "LED on" and "LED off" code. Actually, just visit the below page to b
 
 > ### Pin Diagram
 
-
 ![][link-PICO_Shield]
-  
-  
+
+
+
 <a name="ethernet_example_structure"></a>
 
-# Ethernet example structure
+# :open_file_folder:Ethernet example structure
 
 Ethernet examples are available at '**RP2040-HAT-CircuitPython/example/**' directory. As of now, following examples are provided.
 
@@ -105,28 +105,31 @@ Ethernet examples are available at '**RP2040-HAT-CircuitPython/example/**' direc
 - [**MQTT**][link-MQTT]
   - [Publish][link-MQTT_Pub]
   - [Subscribe][link-MQTT_Sub]
+  - [PubSub][link-pubsub]
 - [**SNTP**][link-SNTP]
 - [**FTP**][link-FTP]
 - [**Adafruit IO**][link-adafruit_io]
   - [UpLink][link-uplink]
   - [DownLink][link-downlink]
 
-
 <a name="Ethernet_example_testing"></a>
 
-# Ethernet example testing
+# :pushpin:Ethernet example testing
 
 
-# Documentation
+
+<a name="Documentation"></a>
+
+# :books:Documentation
 
 Documentation for WIZnet Ethernet HAT and Raspberry pi pico board
 ## Raspberry Pi Pico
  [**Raspberry Pi Pico Datasheet**](https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf)
 
   An RP2040-based microcontroller board
- 
+
  [**Getting started with Raspberry Pi Pico**](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)
- 
+
  C/C++ development with Raspberry Pi Pico and other RP2040-based microcontroller boards
 
 ## WIZnet Ethernet HAT & EVB
@@ -134,7 +137,7 @@ Documentation for WIZnet Ethernet HAT and Raspberry pi pico board
 
  [**W5100S-EVB-Pico**](https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico)
 
-> Please refer to 'README.md' in each examples directory to find detail guide for testing ethernet examples.
+Please refer to 'README.md' in each examples directory to find detail guide for testing ethernet examples.
 
 
 
@@ -180,6 +183,7 @@ Link
 [link-MQTT]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT
 [link-MQTT_Pub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/Publish
 [link-MQTT_Sub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/Subscribe
+[link-pubsub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/PubSub
 [link-SNTP]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/SNTP
 [link-FTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/FTP_Client
 [link-adafruit_io]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO
