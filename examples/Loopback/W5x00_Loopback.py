@@ -92,7 +92,7 @@ while True:
             if avail:
                 # print("Received size:", avail)
                 # data = conn.recv(0)
-                data = conn.recv(2048)
+                data = conn.embed_recv(2048)
                 if data:
                     print("DATA ptr", id(data), ",DATA Len: ", len(data))
                     conn.send(data)  # Echo message back to client
