@@ -11,7 +11,7 @@
 
 # :blue_book:Overview
 
-WIZnet W5100S Ethernet Shield includes W5100S chip - hardwired TCP/IP internet controller. The Ethernet Shield is connected to the Raspberry Pi Pico via SPI interface, making it easy to add Ethernet communication ability. Another option is using WIZ810Sio module which is also built on W5100S chip.
+WIZnet W5100S Ethernet HAT includes W5100S chip - hardwired TCP/IP internet controller. The Ethernet HAT is connected to the Raspberry Pi Pico via SPI interface, making it easy to add Ethernet communication ability. Another option is using WIZ810Sio module which is also built on W5100S chip.
 
 ![][link-Shield]
 
