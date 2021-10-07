@@ -9,15 +9,15 @@
 
 > These sections will guide you through a series of steps from configuring development environment to running ethernet examples using the **WIZnet's ethernet products**.
 
-- [:rocket:Ethernet Example Getting Started [Circuitpython]](#ethernet-example-getting-started-circuitpython)
-- [:bulb:Development environment configuration](#development-environment-configuration)
+- [Ethernet Example Getting Started [Circuitpython]](#ethernet-example-getting-started-circuitpython)
+- [Development environment configuration](#development_environment_configuration)
   - [STEP1 : **Installing Circuitpython**](#step1--installing-circuitpython)
   - [STEP2 : **Setup WIZnet Ethernet Libraray**](#step2--setup-wiznet-ethernet-libraray)
-- :hammer:[Hardware requirements](#hardware-requirements)
-- [:open_file_folder:Ethernet example structure](#ethernet-example-structure)
-- :pushpin:[Ethernet example testing](#ethernet-example-testing)
+- [Hardware requirements](#hardware_requirements)
+- [Ethernet example structure](#ethernet_example_structure)
+- [Ethernet example testing](#Ethernet_example_testing)
 
-- [:books:Documentation](#Documentation)
+- [Documentation](#Documentation)
 
 
 
