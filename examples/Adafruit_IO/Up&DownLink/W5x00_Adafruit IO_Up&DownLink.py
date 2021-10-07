@@ -35,7 +35,7 @@ W5x00_RSTn = board.GP20
 #DHT11
 dhtDevice = adafruit_dht.DHT11(board.GP0)
 
-print("Wiznet5k Adafruit UpLink Test (DHCP)")
+print("Wiznet5k Adafruit Up&Down Link Test (DHCP)")
 # Setup your network configuration below
 # random MAC, later should change this value on your vendor ID
 MY_MAC = (0x00, 0x01, 0x02, 0x03, 0x04, 0x05)
