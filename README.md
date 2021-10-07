@@ -2,7 +2,7 @@
 
 - :blue_book:[Overview](#overview)
 
-- :newspaper:[CircuitPython Getting Started](#start)
+- :rocket:[CircuitPython Getting Started](#start)
 
 - :black_nib:[Directory Structure](#directory )
 
