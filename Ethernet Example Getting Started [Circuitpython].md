@@ -81,8 +81,9 @@ Let's test "LED on" and "LED off" code. Actually, just visit the below page to b
 
 | Image| Name| Etc |
 |-|-|-|
-|<image src= "./images/START/raspberrypi_pico.png" width="50px" height="50px">|[**Raspberry Pi Pico**][link-raspberry_pi_pico]|[Pico Document](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)|
- |<image src= "./images/START/EthernetHAT.png" width="70px" height="50px">|[**WIZnet Ethernet HAT**][link-wiznet_ethernet_hat]|[Ethernet HAT Datasheet](https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat)|
+|<image src= "./images/START/raspberrypi_pico.png" width="100px" height="90px">|[**Raspberry Pi Pico**][link-raspberry_pi_pico]|[Pico Document](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html)|
+|<image src= "./images/START/WIZnet-Ethernet-HAT-1.png" width="120px" height="40px">|[**WIZnet Ethernet HAT**][link-wiznet_ethernet_hat]|[Ethernet HAT Datasheet](https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat)|
+|<image src= "./images/START/W5100S-EVB-Pico_1.png" width="120px" height="45px">|[**WIZnet W5100S-EVB-Pico**][link-wiznet_W5100S_evb_pico]|[W5100S-EVB-Pico Datasheet][link-wiznet_W5100S_evb_pico]|
 
 > ### Pin Diagram
 
@@ -168,7 +169,7 @@ Link
 
 [link-raspberry_pi_pico]: https://www.raspberrypi.org/products/raspberry-pi-pico
 [link-wiznet_ethernet_hat]: https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat
-
+[link-wiznet_W5100S_evb_pico]:https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico
 [link-library]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/lib
 
 
