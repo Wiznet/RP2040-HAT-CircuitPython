@@ -1,29 +1,30 @@
 # WIZnet Ethernet HAT & Raspberry Pi Pico [RP2040]
 
-[Overview](#overview)
+:blue_book:[Overview](#overview)
 
-[CircuitPython Getting Started](#start)
+:newspaper:[CircuitPython Getting Started](#start)
 
-[Directory Structure](#directory )
+:black_nib:[Directory Structure](#directory )
 
 
 <a name="overview"></a>
 
-# Overview
+# :blue_book:Overview
 
 WIZnet W5100S Ethernet Shield includes W5100S chip - hardwired TCP/IP internet controller. The Ethernet Shield is connected to the Raspberry Pi Pico via SPI interface, making it easy to add Ethernet communication ability. Another option is using WIZ810Sio module which is also built on W5100S chip.
 
 ![][link-Shield]
 
 <a name="start"></a>
-# CircuitPython Getting Started
+
+# :newspaper:CircuitPython Getting Started
 
 Please refer to [getting_stared.md][link-getting_started] for examples usage.
 ![][link-getting_image]
 
 <a name="directory"></a>
 
-# Directory Structure
+# :black_nib:Directory Structure
 
 ``` bash
 ├─examples
