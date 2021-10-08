@@ -11,9 +11,9 @@
 
 # :blue_book:Overview
 
-WIZnet W5100S Ethernet HAT includes W5100S chip - hardwired TCP/IP internet controller. The Ethernet HAT is connected to the Raspberry Pi Pico via SPI interface, making it easy to add Ethernet communication ability. Another option is using WIZ810Sio module which is also built on W5100S chip.
+WIZnet W5100S Ethernet Shield includes W5100S chip - hardwired TCP/IP internet controller. The Ethernet Shield is connected to the Raspberry Pi Pico via SPI interface, making it easy to add Ethernet communication ability. Another option is using WIZ810Sio module which is also built on W5100S chip.
 
-![][link-Shield]
+![][link-wiznet_pico_]
 
 <a name="start"></a>
 
@@ -60,7 +60,7 @@ Please refer to [getting_stared.md][link-getting_started] for examples usage.
 Link
 -->
 
-[link-Shield]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PICO%20Shield.jpg
+[link-wiznet_pico_]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/WIZnet_PICO_.jpg
 [link-getting_image]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/getting_started.png
 [link-getting_started]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/Ethernet%20Example%20Getting%20Started%20%5BCircuitpython%5D.md
 
