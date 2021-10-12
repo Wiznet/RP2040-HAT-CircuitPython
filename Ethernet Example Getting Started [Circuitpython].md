@@ -131,7 +131,7 @@ Check if the network is connected normally and if the data is sent to each other
 3. When the command prompt window appears, type the **ping command** and press Enter.
 
 ```
-ping (destination IP) (-option)
+ping 192.168.1.100 (-option)
 ```
 
 4. Ping tests begin as packets are exchanged between hosts.
