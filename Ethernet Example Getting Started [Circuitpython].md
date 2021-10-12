@@ -108,7 +108,6 @@ Ethernet examples are available at '**RP2040-HAT-CircuitPython/example/**' direc
   - [Subscribe][link-MQTT_Sub]
   - [PubSub][link-pubsub]
 - [**SNTP**][link-SNTP]
-- [**FTP**][link-FTP]
 - [**Adafruit IO**][link-adafruit_io]
   - [UpLink][link-uplink]
   - [DownLink][link-downlink]
@@ -186,7 +185,6 @@ Link
 [link-MQTT_Sub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/Subscribe
 [link-pubsub]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/MQTT/PubSub
 [link-SNTP]:  https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/SNTP
-[link-FTP]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/FTP_Client
 [link-adafruit_io]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO
 [link-uplink]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO/UpLink
 [link-downlink]: https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/examples/Adafruit_IO/DownLink
