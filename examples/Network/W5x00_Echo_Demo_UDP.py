@@ -61,7 +61,7 @@ server = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)  # Allocate socket for 
 server_ip = '192.168.0.200'  # IP address of server
 server_port = 5000  # Port to listen on
 port = 5000
-sock.bind((eth.pretty_ip(eth.ip_address),port))
+server.bind((eth.pretty_ip(eth.ip_address),port))
 print("socket connected")
 while True:
     led.value = not led.value
