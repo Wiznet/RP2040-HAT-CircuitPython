@@ -116,6 +116,30 @@ Ethernet examples are available at '**RP2040-HAT-CircuitPython/example/**' direc
 
 # :pushpin:Ethernet example testing
 
+Check if the network is connected normally and if the data is sent to each other.
+
+[W5x00_Ping_Test.py](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/Network/W5x00_Ping_Test.py)
+
+> This is the code to set the IP of 192.168.1.100
+
+> I hope that the PC also has an environment that communicates with 192.168.1.xxx.
+
+1. Copy the content to code.py on your RPi Pico and save.
+
+2. Press the `Win+R` key to enter cmd and press Enter or OK to execute the **command prompt**.
+
+3. When the command prompt window appears, type the **ping command** and press Enter.
+
+```
+ping (destination IP) (-option)
+```
+
+4. Ping tests begin as packets are exchanged between hosts.
+
+5. If you look at the time and loss rate among the statistical results, you can find out the status of the Internet network.
+
+- It's normal when you see the screen below, and the packet loss rate is important.
+
 
 
 <a name="Documentation"></a>
