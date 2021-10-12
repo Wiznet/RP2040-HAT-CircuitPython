@@ -35,6 +35,9 @@ Install `CircuitPython` on Raspberry Pi Pico by referring to the link above.
 
  - [https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython)
 
+```  
+WIZnet Ethernet Library is supports Bundle for Version 6.x and Version 7.x.
+```
 It makes it easier than ever to get prototyping by requriring no upfront desktop software downloads. Simply copy and edit files on the `CIRCUITPY` drive to iterate.
 
 
