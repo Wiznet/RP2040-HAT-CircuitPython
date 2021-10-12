@@ -35,9 +35,6 @@ Install `CircuitPython` on Raspberry Pi Pico by referring to the link above.
 
  - [https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython)
 
-```  
-WIZnet Ethernet Library is supports Bundle for Version 6.x and Version 7.x.
-```
 It makes it easier than ever to get prototyping by requriring no upfront desktop software downloads. Simply copy and edit files on the `CIRCUITPY` drive to iterate.
 
 
@@ -129,7 +126,11 @@ Check if the network is connected normally and if the data is sent to each other
 
 1. Copy the content to code.py on your RPi Pico and save.
 
+![][link-ping_1]
+
 2. Press the `Win+R` key to enter cmd and press Enter or OK to execute the **command prompt**.
+
+![][link-ping_2]
 
 3. When the command prompt window appears, type the **ping command** and press Enter.
 
@@ -137,11 +138,17 @@ Check if the network is connected normally and if the data is sent to each other
 ping 192.168.1.100 (-option)
 ```
 
+![][link-ping_3]
+
 4. Ping tests begin as packets are exchanged between hosts.
+
+![][link-ping_4]
 
 5. If you look at the time and loss rate among the statistical results, you can find out the status of the Internet network.
 
 - It's normal when you see the screen below, and the packet loss rate is important.
+
+![][link-ping_5]
 
 
 
@@ -218,5 +225,13 @@ Link
 
 
 
+[link-ping_1]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PING_1.jpg
+[link-ping_2]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PING_2.jpg
+[link-ping_3]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PING_3.jpg
+[link-ping_4]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PING_4.jpg
+
+[link-ping_5]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/images/START/PING_5.jpg
+
 
 _[▲ Back to Top](#Ethernet_Example_Getting_Started)_ 
+
