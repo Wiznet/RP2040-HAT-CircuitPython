@@ -79,7 +79,7 @@ eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 
 Attach a flow that operates through [WIRESHARK][link-wireshark].
 
-- [Loopback.pcapng](..\..\..\..\Loopback.pcapng)
+- [Loopback.pcapng](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/Loopback/Loopback.pcapng)
 
 
 
