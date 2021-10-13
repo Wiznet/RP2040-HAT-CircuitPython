@@ -79,6 +79,14 @@ print("DNS Translate : DNS Server        -->> %s" % eth.pretty_ip(eth.get_host_b
 
 
 
+## Attach
+
+Attach a flow that operates through [WIRESHARK](https://www.wireshark.org/#download).
+
+- [DNS.pcapng](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/DNS/DNS.pcapng)
+
+
+
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
 
 

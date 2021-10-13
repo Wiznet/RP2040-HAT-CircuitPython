@@ -96,8 +96,17 @@ W5x00_RSTn = board.GP20
 ![][link-DHCP_3]![][link-DHCP_4]
 
 
- [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
 
+## Attach
+
+Attach a flow that operates through [WIRESHARK](https://www.wireshark.org/#download).
+
+- [DHCP.pcapng](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/DHCP/DHCP.pcapng)
+
+
+
+
+ [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
 
 <!--
 Link

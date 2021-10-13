@@ -92,6 +92,14 @@ while True:
 
 
 
+## Attach
+
+Attach a flow that operates through [WIRESHARK](https://www.wireshark.org/#download).
+
+- [HTTP_Client.pcapng](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/HTTP/Webclient/HTTP_Client.pcapng)
+
+
+
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
 
 
