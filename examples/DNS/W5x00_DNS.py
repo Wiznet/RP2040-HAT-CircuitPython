@@ -17,7 +17,7 @@ SPI0_CSn = board.GP17
 ##reset
 W5x00_RSTn = board.GP20
 
-print("Wiznet5k Loopback Test (DHCP)")
+print("Wiznet5k DNS Test (DHCP)")
 
 # Setup your network configuration below
 # random MAC, later should change this value on your vendor ID
