@@ -89,6 +89,16 @@ print("The time is %d:%02d:%02d" %(cal.tm_hour,cal.tm_min,cal.tm_sec))
 ![][link-SNTP]
 
 
+
+## Attach
+
+Attach a flow that operates through [WIRESHARK](https://www.wireshark.org/#download).
+
+- [SNTP.pcapng](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/SNTP/SNTP.pcapng)
+
+
+
+
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
 
 

@@ -119,6 +119,16 @@ mosquitto_sub -h 192.168.1.11 -t WIZnetTest
 ![][link-mqtt_conf]
 
 
+
+## Attach
+
+Attach a flow that operates through [WIRESHARK](https://www.wireshark.org/#download).
+
+- [MQTT_pub.pcapng](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/MQTT/Publish/MQTT_pub.pcapng)
+
+
+
+
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
 
 
