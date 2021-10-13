@@ -75,9 +75,16 @@ eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 
 
 
+## Attach
+
+Attach a flow that operates through [WIRESHARK][link-wireshark].
+
+- [Loopback.pcapng](..\..\..\..\Loopback.pcapng)
+
+
+
 
  [**◀ Go to Ethernet example structure**](#ethernet_example_structure)
-
 
 
 
@@ -89,6 +96,7 @@ Link
 
 [link-tera_term]: https://osdn.net/projects/ttssh2/releases/
 [link-hercules]: https://www.hw-group.com/software/hercules-setup-utility
+[link-wireshark]: https://www.wireshark.org/#download
 [link-loopback_0]: https://github.com/Wiznet-OpenHardware/RP2040-HAT-CircuitPython/blob/main/img/LOOPBACK/Loopback.jpg
 
 
