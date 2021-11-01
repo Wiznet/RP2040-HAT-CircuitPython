@@ -203,7 +203,7 @@ Link
 [link-raspberry_pi_pico]: https://www.raspberrypi.org/products/raspberry-pi-pico
 [link-wiznet_ethernet_hat]: https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat
 [link-wiznet_W5100S_evb_pico]:https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico
-[link-library]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/lib
+[link-library]:https://github.com/Wiznet/RP2040-HAT-CircuitPython/tree/master/libraries/adafruit_wiznet5k
 
 
 
