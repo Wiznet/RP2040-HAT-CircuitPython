@@ -34,9 +34,15 @@
 
 > ### Pin Diagram
 
+**`WIZnet Ethernet HAT`**
+
 Ethernet-HAT has the same pin arrangement and pin spacing as Raspberry Pi Pico. The W5100S and RJ45 are built-in, Ethernet can be used by plugging into the Raspberry pi pico. **One thing to note when using HAT is to look carefully at the direction and plug it in**. There is a USB shape marked, and this direction and the USB direction of Pico must be the same.
 
 ![][link-PICO_HAT]
+
+
+
+**`WIZnet W5100S-EVB-Pico`**
 
 In the W5100S-EVB-Pico board, GPIO pins are connected the same as the Raspberry Pi Pico board.  If Pico uses Ethernet, **PIO16, GPIO17, GPIO18, GPIO19, GPIO20**, and **GPIO21** pins cannot be used. It is a pin used inside the RP2040 board.
 
