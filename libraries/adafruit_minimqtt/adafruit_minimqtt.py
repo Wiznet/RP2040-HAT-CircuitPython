@@ -510,6 +510,7 @@ class MQTT:
                     raise MMQTTException(CONNACK_ERRORS[rc[2]])
                 self._is_connected = True
                 result = rc[0] & 1
+                print("Connected to MQTT Broker!")
                 if self.on_connect is not None:
                     self.on_connect(self, self._user_data, result, rc[2])
                 return result
@@ -529,6 +530,7 @@ class MQTT:
         self._sock.close()
         self._is_connected = False
         self._subscribed_topics = []
+        print("Disconnected from MQTT Broker!")
         if self.on_disconnect is not None:
             self.on_disconnect(self, self._user_data, 0)
 
