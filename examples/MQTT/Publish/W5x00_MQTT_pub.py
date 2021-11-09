@@ -8,6 +8,26 @@ import adafruit_wiznet5k.adafruit_wiznet5k_socket as socket
 
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
+### Topic Setup ###
+# MQTT Topic
+# Use this topic if you'd like to connect to a standard MQTT broker
+mqtt_topic = 'WIZnetTest'
+
+# MQTT Send Message text
+text = "Hello Broker, I'm PICO"
+
+# Set up a MiniMQTT Client
+# NOTE: We'll need to connect insecurely for ethernet configurations.
+mqtt_client = MQTT.MQTT(
+    broker="192.168.1.11",  #setup your PC IP address
+    username="rpi-pico",       
+    password="wiznet",      
+    is_ssl=False,
+    socket_pool=None,
+    ssl_context=None,
+    keep_alive=60,
+)
+   
 #SPI0
 SPI0_SCK = board.GP18
 SPI0_TX = board.GP19
@@ -56,55 +76,12 @@ print("Chip Version:", eth.chip)
 print("MAC Address:", [hex(i) for i in eth.mac_address])
 print("My IP address is:", eth.pretty_ip(eth.ip_address))
 
-### Code ###
-# Define callback methods which are called when events occur
-# pylint: disable=unused-argument, redefined-outer-name
-def connect(mqtt_client, userdata, flags, rc):
-    # This function will be called when the mqtt_client is connected
-    # successfully to the broker.
-    print("Connected to MQTT Broker!")
-    print("Flags: {0}\n RC: {1}".format(flags, rc))
-
-def disconnect(mqtt_client, userdata, rc):
-    # This method is called when the mqtt_client disconnects
-    # from the broker.
-    print("Disconnected from MQTT Broker!")
-    
-def message(client, topic, message):
-    # Method callled when a client's subscribed feed has a new value.
-    print("New message on topic {0}: {1}".format(topic, message))
-
 # Initialize MQTT interface with the ethernet interface
 MQTT.set_socket(socket, eth)
-
-### Topic Setup ###
-# MQTT Topic
-# Use this topic if you'd like to connect to a standard MQTT broker
-mqtt_topic = 'WIZnetTest'
-
-# Set up a MiniMQTT Client
-# NOTE: We'll need to connect insecurely for ethernet configurations.
-mqtt_client = MQTT.MQTT(
-    broker="192.168.1.11",  #setup PC IP address
-    username="rpi-pico",       
-    password="wiznet",      
-    is_ssl=False,
-    socket_pool=None,
-    ssl_context=None,
-    keep_alive=60,
-)
-
-# Setup the callback methods above
-mqtt_client.on_connect = connect
-mqtt_client.on_disconnect = disconnect
-mqtt_client.on_message = message
 
 # Connect the client to the MQTT broker.
 print("Connecting to Broker...")
 mqtt_client.connect()
-
-#MQTT Send Message
-text = "Hello Broker, I'm PICO"
 
 ###MQTT Publisher Run###
 while True:
@@ -112,6 +89,7 @@ while True:
 
     #send a new message
     mqtt_client.publish(mqtt_topic, text)
+    print("{0} topic send {1} to broker".format(mqtt_topic, text))
 
     time.sleep(1)
 
