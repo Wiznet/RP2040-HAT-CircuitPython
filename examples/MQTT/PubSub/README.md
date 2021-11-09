@@ -50,7 +50,7 @@ eth = WIZNET5K(spi_bus, cs, is_dhcp=True, mac=MY_MAC, debug=False)
 3. In the MQTT configuration, the broker IP address is the IP of your desktop.
 
 ```python
-# Set up a MiniMQTT Client
+# Set up a MQTT Client
 # NOTE: We'll need to connect insecurely for ethernet configurations.
 mqtt_client = MQTT.MQTT(
     broker="192.168.1.11",  #setup your PC IP address.
@@ -68,12 +68,12 @@ mqtt_client = MQTT.MQTT(
 ```python
 #MQTT Subscriber Run
 while True:
-    # mqtt_client.loop()
+    mqtt_client.loop()
 
     #send a new message
-    mqtt_client.subscribe(breakfast_topic)
-    mqtt_client.subscribe(lunch_topic)
-    mqtt_client.subscribe(dinner_topic)
+    mqtt_client.subscribe(breakfast_sub_topic)
+    mqtt_client.subscribe(lunch_sub_topic)
+    mqtt_client.subscribe(dinner_sub_topic)
 
     time.sleep(1)
 
@@ -107,11 +107,11 @@ C:\Program Files\Mosquitto> mosquitto -c mosquitto.conf -p 1883 -v
 
 ```
 [Client Breakfast]
-C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t Breakfast
+C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t BREAKFAST
 [Client Lunch]
-C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t Lunch
+C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t LUNCH
 [Client Dinner]
-C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t Dinner
+C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t DINNER
 ```
 
 ![][link-mqtt_pubsub_1]
@@ -123,11 +123,11 @@ C:\Program Files\Mosquitto> mosquitto_sub -h 192.168.1.11 -t Dinner
 5. When you open a new prompt and put a **Public message** in the topic through a broker, the text suitable for each **Topic** is output in response.
 
 ```
-C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t Breakfast -m "B"
+C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t breakfast -m "B"
 
-C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t Lunch -m "L"
+C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t lunch -m "L"
 
-C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t Dinner -m "D"
+C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t dinner -m "D"
 ```
 
 ![][link-mqtt_pubsub_3]
