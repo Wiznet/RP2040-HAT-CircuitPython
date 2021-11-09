@@ -8,7 +8,7 @@ import adafruit_wiznet5k.adafruit_wiznet5k_socket as socket
 
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
-### Topic Setup ###
+### MQTT Setup ###
 # MQTT Topic
 # Use this topic if you'd like to connect to a standard MQTT broker
 mqtt_topic = 'WIZnetTest'
