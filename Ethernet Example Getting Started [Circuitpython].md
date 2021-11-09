@@ -46,6 +46,8 @@ Ethernet-HAT has the same pin arrangement and pin spacing as Raspberry Pi Pico. 
 
 In the W5100S-EVB-Pico board, GPIO pins are connected the same as the Raspberry Pi Pico board.  If Pico uses Ethernet, **PIO16, GPIO17, GPIO18, GPIO19, GPIO20**, and **GPIO21** pins cannot be used. It is a pin used inside the RP2040 board.
 
+![][link-PICO_EVB]
+
 | I/O  | Pin Name | Description                                    |
 | :--- | -------- | ---------------------------------------------- |
 | I    | GPIO16   | Connected to **MISO** on W5100S                |
@@ -57,10 +59,6 @@ In the W5100S-EVB-Pico board, GPIO pins are connected the same as the Raspberry 
 | I    | GPIO24   | VBUS sense - high if VBUS is present, else low |
 | O    | GPIO25   | Connected to user LED                          |
 | I    | GPIO25   | Used in ADC mode (ADC3) to measure VSYS/3      |
-
-![][link-PICO_EVB]
-
-
 
 <a name="development_environment_configuration"></a>
 
