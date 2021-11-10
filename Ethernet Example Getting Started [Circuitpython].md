@@ -3,7 +3,7 @@
 
 <a name="Ethernet_Example_Getting_Started"></a>
 
-:rocket:Ethernet Example Getting Started [Circuitpython]
+:rocket:Ethernet Example Getting Started [CircuitPython]
 ===========================
 
 
@@ -40,7 +40,7 @@ Ethernet-HAT has the same pin arrangement and pin spacing as Raspberry Pi Pico. 
 
 ![][link-PICO_HAT]
 
-
+------
 
 **`WIZnet W5100S-EVB-Pico`**
 
@@ -68,11 +68,17 @@ In the W5100S-EVB-Pico board, GPIO pins are connected the same as the Raspberry 
 
 ![][link-CircuitPython]
 
-## STEP1 : [**Installing Circuitpython**][link-Installing Circuitpython]
+## STEP - 1 : [**Installing CircuitPython**][link-Installing Circuitpython]
+
+:warning:**Notice**
 
 Install `CircuitPython` on Raspberry Pi Pico by referring to the link above.:point_down:
 
  - **[https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython)**
+
+
+
+------
 
 It makes it easier than ever to get prototyping by requriring no upfront desktop software downloads. Simply copy and edit files on the `CIRCUITPY` drive to iterate.
 
@@ -83,10 +89,10 @@ You edit and save your code on code.py, run your code on the board.
 
 Let's test "LED on" and "LED off" code. Actually, just visit the below page to blink led on your rpi pico board.
 
-[https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/blinky-and-a-button](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/blinky-and-a-button)
+- [https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/blinky-and-a-button](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/blinky-and-a-button)
 
 
-## STEP2 : [**Setup WIZnet Ethernet Libraray**][link-Setup WIZnet Libraray]
+## STEP - 2 : [**Setup WIZnet Ethernet Libraray**][link-Setup WIZnet Libraray]
 
 1. Copy the [**WIZnet library**][link-library] into the lib folder inside the Raspberry Pi Pico.
    [https://learn.adafruit.com/ethernet-for-circuitpython/circuitpython-setup](https://learn.adafruit.com/ethernet-for-circuitpython/circuitpython-setup)
@@ -100,6 +106,8 @@ Let's test "LED on" and "LED off" code. Actually, just visit the below page to b
    `adafruit_requests.mpy`
 
 <p align="center"> <image src= "./images/START/Library001.png"></p>
+
+
 
 2. you need to open `PuTTY`. Under Connection type: choose the button next to Serial.
    In the box under Serial line, enter the serial port you found that your board is using. In the box under Speed, enter `115200`. 
@@ -144,7 +152,7 @@ Check if the network is connected normally and if the data is sent to each other
 [W5x00_Ping_Test.py](https://github.com/Wiznet/RP2040-HAT-CircuitPython/blob/master/examples/Network/W5x00_Ping_Test.py)
 
 > This is the code to set the IP of 192.168.1.100
-
+>
 > I hope that the PC also has an environment that communicates with 192.168.1.xxx.
 
 1. Copy the content to code.py on your RPi Pico and save.
