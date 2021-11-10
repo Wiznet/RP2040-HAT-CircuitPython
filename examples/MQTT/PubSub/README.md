@@ -134,7 +134,7 @@ C:\Program Files\Mosquitto>mosquitto_pub -h 192.168.1.11 -t dinner -m "D"
 
 
 
-**user manual in video** - https://youtu.be/vtMPr-vCbEo
+**user manual in video** - https://youtu.be/9PR27j9qlEc
 
 ## Appendix
 
