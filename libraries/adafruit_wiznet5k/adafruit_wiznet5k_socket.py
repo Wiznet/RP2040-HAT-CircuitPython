@@ -286,6 +286,7 @@ class socket:
                         ]
                     elif self._sock_type == SOCK_DGRAM:
                         self._buffer += _the_interface.read_udp(self.socknum, avail)[1]
+                        break
                 else:
                     break
             gc.collect()
@@ -307,6 +308,7 @@ class socket:
                     )[1]
                 elif self._sock_type == SOCK_DGRAM:
                     recv = _the_interface.read_udp(self.socknum, min(to_read, avail))[1]
+                    to_read = len(recv) # only get this dgram
                 recv = bytes(recv)
                 received.append(recv)
                 to_read -= len(recv)
@@ -354,8 +356,8 @@ class socket:
         return (
             self.recv(bufsize),
             (
-                _the_interface.remote_ip(self.socknum),
-                _the_interface.remote_port(self.socknum),
+                _the_interface.pretty_ip(_the_interface.udp_from_ip[self.socknum]),
+                _the_interface.udp_from_port[self.socknum],
             ),
         )
 
