@@ -860,7 +860,7 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
             val_1 = self._read_snrx_rsr(sock)
             if val_1 != 0:
                 val = self._read_snrx_rsr(sock)
-        return int.from_bytes(val, "b")
+        return int.from_bytes(val, "big")
 
     def _get_tx_free_size(self, sock):
         """Get free size of sock's tx buffer block."""
@@ -870,7 +870,7 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
             val_1 = self._read_sntx_fsr(sock)
             if val_1 != 0:
                 val = self._read_sntx_fsr(sock)
-        return int.from_bytes(val, "b")
+        return int.from_bytes(val, "big")
 
     def _read_snrx_rd(self, sock):
         self._pbuff[0] = self._read_socket(sock, REG_SNRX_RD)[0]
