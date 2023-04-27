@@ -122,8 +122,6 @@ W5200_W5500_MAX_SOCK_NUM = const(0x08)
 W5100_MAX_SOCK_NUM = const(0x04)
 SOCKET_INVALID = const(255)
 
-# UDP socket struct.
-UDP_SOCK = {"bytes_remaining": 0, "remote_ip": 0, "remote_port": 0}
 
 # Source ports in use
 SRC_PORTS = [0] * W5200_W5500_MAX_SOCK_NUM
@@ -181,7 +179,11 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
         # Set MAC address
         self.mac_address = mac
         self.src_port = 0
-        self._dns = 0
+        self._dns = (0,0,0,0)
+        # udp related 
+        self.udp_datasize = [0] * self.max_sockets
+        self.udp_from_ip = [b"\x00\x00\x00\x00"] * self.max_sockets
+        self.udp_from_port = [0] * self.max_sockets
 
         # First, wait link status is on
         # to avoid the code during DHCP, socket listen, connect ... - assert self.link_status, "Ethernet cable disconnected!"
@@ -491,11 +493,6 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
                     bus_device.write(bytes([data[i]]))  # pylint: disable=no-member
 
     # Socket-Register API
-    def udp_remaining(self):
-        """Returns amount of bytes remaining in a udp socket."""
-        if self._debug:
-            print("* UDP Bytes Remaining: ", UDP_SOCK["bytes_remaining"])
-        return UDP_SOCK["bytes_remaining"]
 
     def socket_available(self, socket_num, sock_type=SNMR_TCP):
         """Returns the amount of bytes to be read from the socket.
@@ -516,16 +513,16 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
         if sock_type == SNMR_TCP:
             return res
         if res > 0:
-            if UDP_SOCK["bytes_remaining"]:
-                return UDP_SOCK["bytes_remaining"]
+            if self.udp_datasize[socket_num]:
+                return self.udp_datasize[socket_num]
             # parse the udp rx packet
             # read the first 8 header bytes
             ret, self._pbuff = self.socket_read(socket_num, 8)
             if ret > 0:
-                UDP_SOCK["remote_ip"] = self._pbuff[:4]
-                UDP_SOCK["remote_port"] = (self._pbuff[4] << 8) + self._pbuff[5]
-                UDP_SOCK["bytes_remaining"] = (self._pbuff[6] << 8) + self._pbuff[7]
-                ret = UDP_SOCK["bytes_remaining"]
+                self.udp_from_ip[socket_num] = self._pbuff[:4]
+                self.udp_from_port[socket_num] = (self._pbuff[4] << 8) + self._pbuff[5]
+                self.udp_datasize[socket_num] = (self._pbuff[6] << 8) + self._pbuff[7]
+                ret = self.udp_datasize[socket_num]
                 return ret
         return 0
 
@@ -569,7 +566,7 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
                 if self.socket_status(socket_num)[0] == SNSR_SOCK_CLOSED:
                     raise RuntimeError("Failed to establish connection.")
         elif conn_mode == SNMR_UDP:
-            UDP_SOCK["bytes_remaining"] = 0
+            self.udp_datasize[socket_num] = 0
         return 1
 
     def _send_socket_cmd(self, socket, cmd):
@@ -760,14 +757,15 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
         return ret, resp
 
     def read_udp(self, socket_num, length):
-        """Read UDP socket's remaining bytes."""
-        if UDP_SOCK["bytes_remaining"] > 0:
-            if UDP_SOCK["bytes_remaining"] <= length:
-                ret, resp = self.socket_read(socket_num, UDP_SOCK["bytes_remaining"])
+        """Read UDP socket's current message bytes."""
+        if self.udp_datasize[socket_num] > 0:
+            if self.udp_datasize[socket_num] <= length:
+                ret, resp = self.socket_read(socket_num, self.udp_datasize[socket_num])
             else:
                 ret, resp = self.socket_read(socket_num, length)
-            if ret > 0:
-                UDP_SOCK["bytes_remaining"] -= ret
+                # just consume the rest, it is lost to the higher layers
+                self.socket_read(socket_num, self.udp_datasize[socket_num] - length)
+            self.udp_datasize[socket_num] = 0
             return ret, resp
         return -1
 
