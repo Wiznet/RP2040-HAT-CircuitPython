@@ -4,12 +4,15 @@
 It's simple.
 
 Original Library
-[Before](/MORE/Screenshot_2023-05-15-19-50-04_3-1.png)
+[Before](/images/MORE/Screenshot_2023-05-15-19-50-04_3-1.png)
+
 
 New Library (only changed wiznet5k.py)
-[After](/MORE/Screenshot_2023-05-15-19-51-46_2-1.png)
+[After](/images/MORE/Screenshot_2023-05-15-19-51-46_2-1.png)
+
 
 The new lib's will be usefully in more wider range -!
+
 For ex) Simple personal blog server (in my original plan too)
 
 But It's slowly yet. See you next Release~!
