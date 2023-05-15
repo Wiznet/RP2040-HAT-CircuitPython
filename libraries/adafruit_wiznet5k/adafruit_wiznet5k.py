@@ -775,79 +775,94 @@ class WIZNET5K:  # pylint: disable=too-many-public-methods
         """Writes a bytearray to a provided socket."""
         assert self.link_status, "Ethernet cable disconnected!"
         assert socket_num <= self.max_sockets, "Provided socket exceeds max_sockets."
-        status = 0
-        ret = 0
-        free_size = 0
-        if len(buffer) > SOCK_SIZE:
-            ret = SOCK_SIZE
-        else:
-            ret = len(buffer)
-        stamp = time.monotonic()
+     
+        # Split into 2KB block and repeat transfer - 23.05.10 New code by Easygn
+        lastB = 0
+        idxB = 0
+        ln_buffer = len(buffer)
+        while lastB == 0:           
+            status = 0
+            ret = 0
+            free_size = 0
+            if ln_buffer > SOCK_SIZE + idxB:
+                ret = SOCK_SIZE
+                skBuffer = bytes(buffer[idxB:idxB+SOCK_SIZE])
+            else:
+                ret = ln_buffer - idxB
+                skBuffer = bytes(buffer[idxB:ln_buffer])
+                lastB = 1
+            # --- New code End
 
-        # if buffer is available, start the transfer
-        free_size = self._get_tx_free_size(socket_num)
-        while free_size < ret:
+            stamp = time.monotonic()
+
+            # if buffer is available, start the transfer
             free_size = self._get_tx_free_size(socket_num)
-            status = self.socket_status(socket_num)[0]
-            if status not in (SNSR_SOCK_ESTABLISHED, SNSR_SOCK_CLOSE_WAIT) or (
-                timeout and time.monotonic() - stamp > timeout
-            ):
-                ret = 0
-                break
+            while free_size < ret:
+                free_size = self._get_tx_free_size(socket_num)
+                status = self.socket_status(socket_num)[0]
+                if status not in (SNSR_SOCK_ESTABLISHED, SNSR_SOCK_CLOSE_WAIT) or (
+                    timeout and time.monotonic() - stamp > timeout
+                ):
+                    ret = 0
+                    break
 
-        # Read the starting address for saving the transmitting data.
-        ptr = self._read_sntx_wr(socket_num)
-        offset = ptr & SOCK_MASK
-        if self._chip_type == "w5500":
-            dst_addr = offset + (socket_num * SOCK_SIZE + 0x8000)
+            # Read the starting address for saving the transmitting data.
+            ptr = self._read_sntx_wr(socket_num)
+            offset = ptr & SOCK_MASK
+            if self._chip_type == "w5500":
+                dst_addr = offset + (socket_num * SOCK_SIZE + 0x8000)
     
-            txbuf = buffer[:ret]
-            cntl_byte = 0x14 + (socket_num << 5)
-            self.write(dst_addr, cntl_byte, txbuf)
+                txbuf = skBuffer[:ret]
+                cntl_byte = 0x14 + (socket_num << 5)
+                self.write(dst_addr, cntl_byte, txbuf)
             
-        else :
-        #if self._chip_type == "w5100s":
-            dst_addr = offset + (socket_num * SOCK_SIZE + 0x4000)
-    
-            if (offset + ret > SOCK_SIZE) :
-                size = SOCK_SIZE - offset
-                txbuf = buffer[0:size]
-                self.write(dst_addr, 0x00, txbuf)
-                txbuf = buffer[size:ret]
-                size = ret - size
-                dst_addr = (socket_num * SOCK_SIZE + 0x4000)
-                self.write(dst_addr, 0x00, txbuf)
             else :
-                txbuf = buffer[:ret]
-                self.write(dst_addr, 0x00, buffer[:ret])
+            #if self._chip_type == "w5100s":
+                dst_addr = offset + (socket_num * SOCK_SIZE + 0x4000)
+    
+                if (offset + ret > SOCK_SIZE) :
+                    size = SOCK_SIZE - offset
+                    txbuf = skBuffer[0:size]
+                    self.write(dst_addr, 0x00, txbuf)
+                    txbuf = skBuffer[size:ret]
+                    size = ret - size
+                    dst_addr = (socket_num * SOCK_SIZE + 0x4000)
+                    self.write(dst_addr, 0x00, txbuf)
+                else :
+                    txbuf = skBuffer[:ret]
+                    self.write(dst_addr, 0x00, skBuffer[:ret])
 
-        # update sn_tx_wr to the value + data size
-        ptr = (ptr + ret) & 0xFFFF
-        self._write_sntx_wr(socket_num, ptr)
+            # update sn_tx_wr to the value + data size
+            ptr = (ptr + ret) & 0xFFFF
+            self._write_sntx_wr(socket_num, ptr)
 
-        self._write_sncr(socket_num, CMD_SOCK_SEND)
-        self._read_sncr(socket_num)
+            self._write_sncr(socket_num, CMD_SOCK_SEND)
+            self._read_sncr(socket_num)
 
-        # check data was  transferred correctly
-        while (
-            self._read_socket(socket_num, REG_SNIR)[0] & SNIR_SEND_OK
-        ) != SNIR_SEND_OK:
-            if (
-                self.socket_status(socket_num)[0]
-                in (
-                    SNSR_SOCK_CLOSED,
-                    SNSR_SOCK_TIME_WAIT,
-                    SNSR_SOCK_FIN_WAIT,
-                    SNSR_SOCK_CLOSE_WAIT,
-                    SNSR_SOCK_CLOSING,
-                )
-                or (timeout and time.monotonic() - stamp > timeout)
-            ):
-                # self.socket_close(socket_num)
-                return 0
-            time.sleep(0.01)
+            # check data was  transferred correctly
+            while (
+                self._read_socket(socket_num, REG_SNIR)[0] & SNIR_SEND_OK
+            ) != SNIR_SEND_OK:
+                if (
+                    self.socket_status(socket_num)[0]
+                    in (
+                        SNSR_SOCK_CLOSED,
+                        SNSR_SOCK_TIME_WAIT,
+                        SNSR_SOCK_FIN_WAIT,
+                        SNSR_SOCK_CLOSE_WAIT,
+                        SNSR_SOCK_CLOSING,
+                    )
+                    or (timeout and time.monotonic() - stamp > timeout)
+                ):
+                    # self.socket_close(socket_num)
+                    return 0
+                time.sleep(0.01)
 
-        self._write_snir(socket_num, SNIR_SEND_OK)
+            self._write_snir(socket_num, SNIR_SEND_OK)
+
+            # Ready for next 2KB block - 23.05.10 New code
+            del skBuffer
+            idxB += SOCK_SIZE
         return ret
 
     # Socket-Register Methods
