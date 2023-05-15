@@ -3,7 +3,7 @@
 <div width=360px align="right">Upload : May 16, 2023</div>               
 
        
-Ex) HTTP WebServer
+for HTTP WebServer
 ______
 ### * Original library
 
