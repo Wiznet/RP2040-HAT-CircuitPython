@@ -6,7 +6,7 @@
 for HTTP WebServer
 ______
 ### * Original library   
-- limited 2.0KB   
+- limited below 2.0KB   
 ![Before](/images/MORE/Screenshot_2023-05-15-19-50-04_3-1.png)
 
 
