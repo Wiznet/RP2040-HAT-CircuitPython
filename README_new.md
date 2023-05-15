@@ -25,7 +25,7 @@ ______
 
 For ex) Simple personal blog server (in my original plan too)
 
-But It's speed also slowly yet. (About ~5KB/s)
+But speed was slowly yet. (About ~5KB/s)
 
 Fixed update will see next release~!
 
