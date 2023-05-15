@@ -5,14 +5,15 @@
        
 for HTTP WebServer
 ______
-### * Original library
-
+### * Original library   
+- limited 2.0KB   
 ![Before](/images/MORE/Screenshot_2023-05-15-19-50-04_3-1.png)
 
 
 
 ______    
-### * this New library
+### * this New library   
+- fullsize 22.1KB+   
 (only changed wiznet5k.py)
 
 ![After](/images/MORE/Screenshot_2023-05-15-19-51-46_2-1.png)
