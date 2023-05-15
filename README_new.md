@@ -22,6 +22,8 @@ ______
 
 For ex) Simple personal blog server (in my original plan too)
 
-But It's slowly yet. See you next release~!
+But It's speed also slowly yet. (About ~5KB/s)
+
+Fixed update will see next release~!
 
 
