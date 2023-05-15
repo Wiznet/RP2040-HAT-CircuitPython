@@ -1,5 +1,7 @@
 ## Now library support transfer more than 2KB data
-<div width=360px align="right">May 10, 2023</div>             
+<div width=360px align="right">Release : May 10, 2023</div>   
+<div width=360px align="right">Upload : May 16, 2023</div>               
+
        
 Ex) HTTP WebServer
 ______
