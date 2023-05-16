@@ -6,7 +6,7 @@
 for HTTP WebServer
 ______
 ### * Original library   
-- limited below 2.0KB   
+- limited below ~2.0KB   
 ![Before](/images/MORE/Screenshot_2023-05-15-19-50-04_3-1.png)
 
 
@@ -23,10 +23,13 @@ ______
        
 ### The new lib's will be usefully in more wider range -!
 
-For ex) Simple personal blog server (in my original plan too)
+For ex) Simple personal blog server (in My starting org.plan too)
 
 But speed was slowly yet. (About ~5KB/s)
 
-Fixed update will see next release~!
+If you wanna slightly faster version,
+Using mpy-cross compiled library of the above mpy-cpython-6.3.0 folder
+
+Speed update stretch goal will see next release~!
 
 
