@@ -25,7 +25,7 @@ ______
 
 For ex) Simple personal blog server (in My starting org.plan too)
 
-But speed was slowly yet. (About ~5KB/s)
+But speed was bad slowly yet. (About ~5KB/s)
 
 If you wanna slightly faster version,   
 Using mpy-cross compiled library of the above mpy_lib_cpython-6.3.0 folder
