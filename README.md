@@ -27,7 +27,7 @@ For ex) Simple personal blog server (in My starting org.plan too)
 
 But speed was slowly yet. (About ~5KB/s)
 
-If you wanna slightly faster version,
+If you wanna slightly faster version,   
 Using mpy-cross compiled library of the above mpy-cpython-6.3.0 folder
 
 Speed update stretch goal will see next release~!
