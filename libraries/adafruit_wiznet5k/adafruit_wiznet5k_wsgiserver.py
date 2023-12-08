@@ -27,6 +27,15 @@ https://www.python.org/dev/peps/pep-0333/
 * Author(s): Matt Costi, Patrick Van Oosterwijck
 """
 # pylint: disable=no-name-in-module
+from __future__ import annotations
+
+try:
+    from typing import TYPE_CHECKING, Optional, List, Tuple, Dict
+
+    if TYPE_CHECKING:
+        from adafruit_wiznet5k.adafruit_wiznet5k import WIZNET5K
+except ImportError:
+    pass
 
 import io
 import gc
@@ -34,26 +43,35 @@ from micropython import const
 import adafruit_wiznet5k as wiznet5k
 import adafruit_wiznet5k.adafruit_wiznet5k_socket as socket
 
-_the_interface = None  # pylint: disable=invalid-name
+_the_interface: Optional[WIZNET5K] = None  # pylint: disable=invalid-name
 
 
-def set_interface(iface):
-    """Helper to set the global internet interface"""
+def set_interface(iface: WIZNET5K) -> None:
+    """
+    Helper to set the global internet interface.
+
+    :param wiznet5k.adafruit_wiznet5k.WIZNET5K: Ethernet interface.
+    """
     global _the_interface  # pylint: disable=global-statement, invalid-name
     _the_interface = iface
     socket.set_interface(iface)
 
 
-# # Maximum number of sockets for the web server (number of connections we can hold)
-# MAX_SOCK_NUM = const(6)
-
 # pylint: disable=invalid-name
 class WSGIServer:
-    """
-    A simple server that implements the WSGI interface
-    """
+    """A simple server that implements the WSGI interface."""
 
-    def __init__(self, port=80, debug=False, application=None):
+    def __init__(
+        self,
+        port: int = 80,
+        debug: bool = False,
+        application: Optional[callable] = None,
+    ) -> None:
+        """
+        :param int port: WSGI server port, defaults to 80.
+        :param bool debug: Enable debugging, defaults to False.
+        :param Optional[callable] application: Application to call in response to a HTTP request.
+        """
         self.application = application
         self.port = port
         self._timeout = 20
@@ -62,16 +80,17 @@ class WSGIServer:
 
         self._response_status = None
         self._response_headers = []
-        if _the_interface.chip == "w5100s" :
+        if _the_interface.chip == "w5100s":
             self.MAX_SOCK_NUM = const(2)
-            print("MAX_SOCK_NUM is 2")
         else:
             self.MAX_SOCK_NUM = const(6)
-            print("MAX_SOCK_NUM is 6")
+        if self._debug:
+            print("Max sockets: ", self.MAX_SOCK_NUM)
 
-    def start(self):
+    def start(self) -> None:
         """
-        Starts the server and begins listening for incoming connections.
+        Start the server and listen for incoming connections.
+
         Call update_poll in the main loop for the application callable to be
         invoked on receiving an incoming request.
         """
@@ -85,21 +104,26 @@ class WSGIServer:
             ip = _the_interface.pretty_ip(_the_interface.ip_address)
             print("Server available at {0}:{1}".format(ip, self.port))
 
-    def update_poll(self):
+    def update_poll(self) -> None:
         """
+        Check for new incoming client requests.
+
         Call this method inside your main event loop to get the server
         check for new incoming client requests. When a request comes in,
         the application callable will be invoked.
         """
         for sock in self._client_sock:
-            if sock.available():
+            if sock._available():  # pylint: disable=protected-access
                 environ = self._get_environ(sock)
                 result = self.application(environ, self._start_response)
                 self.finish_response(result, sock)
                 self._client_sock.remove(sock)
                 break
         for sock in self._client_sock:
-            if sock.status == wiznet5k.adafruit_wiznet5k.SNSR_SOCK_CLOSED:
+            if (
+                sock._status  # pylint: disable=protected-access
+                == wiznet5k.adafruit_wiznet5k.SNSR_SOCK_CLOSED
+            ):
                 self._client_sock.remove(sock)
         for _ in range(len(self._client_sock), self.MAX_SOCK_NUM):
             try:
@@ -111,14 +135,14 @@ class WSGIServer:
             except RuntimeError:
                 pass
 
-    def finish_response(self, result, client):
+    def finish_response(self, result: str, client: socket.socket) -> None:
         """
         Called after the application callable returns result data to respond with.
         Creates the HTTP Response payload from the response_headers and results data,
         and sends it back to client.
 
-        :param string result: the data string to send back in the response to the client.
-        :param Socket client: the socket to send the response to.
+        :param str result: the data string to send back in the response to the client.
+        :param socket.socket client: the socket to send the response to.
         """
         try:
             response = "HTTP/1.1 {0}\r\n".format(self._response_status)
@@ -127,37 +151,48 @@ class WSGIServer:
             response += "\r\n"
             client.send(response.encode("utf-8"))
             for data in result:
-                if isinstance(data, bytes):
+                if not isinstance(data, bytes):
+                    data = data.encode("utf-8")
+                if len(data) < 0x800:
                     client.send(data)
                 else:
-                    client.send(data.encode("utf-8"))
+                    # split to chunks of 2 kb
+                    data_chunks = [
+                        data[i : i + 0x800] for i in range(0, len(data), 0x800)
+                    ]
+                    for data_chunk in data_chunks:
+                        client.send(data_chunk)
             gc.collect()
         finally:
-            client.disconnect()
+            client._disconnect()  # pylint: disable=protected-access
             client.close()
 
-    def _start_response(self, status, response_headers):
+    def _start_response(
+        self, status: str, response_headers: List[Tuple[str, str]]
+    ) -> None:
         """
         The application callable will be given this method as the second param
         This is to be called before the application callable returns, to signify
         the response can be started with the given status and headers.
 
-        :param string status: a status string including the code and reason. ex: "200 OK"
-        :param list response_headers: a list of tuples to represent the headers.
+        :param str status: a status string including the code and reason. ex: "200 OK"
+        :param List[Tuple[str, str]] response_headers: a list of tuples to represent the headers.
             ex ("header-name", "header value")
         """
         self._response_status = status
         self._response_headers = [("Server", "w5kWSGIServer")] + response_headers
 
-    def _get_environ(self, client):
+    def _get_environ(self, client: socket.socket) -> Dict:
         """
         The application callable will be given the resulting environ dictionary.
         It contains metadata about the incoming request and the request body ("wsgi.input")
 
-        :param Socket client: socket to read the request from
+        :param socket.socket client: Socket to read the request from.
+
+        :return Dict: Data for the application callable.
         """
         env = {}
-        line = str(client.readline(), "utf-8")
+        line = str(client._readline(), "utf-8")  # pylint: disable=protected-access
         (method, path, ver) = line.rstrip("\r\n").split(None, 2)
 
         env["wsgi.version"] = (1, 0)
@@ -179,7 +214,9 @@ class WSGIServer:
 
         headers = {}
         while True:
-            header = str(client.readline(), "utf-8")
+            header = str(
+                client._readline(), "utf-8"  # pylint: disable=protected-access
+            )
             if header == "":
                 break
             title, content = header.split(": ", 1)
@@ -192,7 +229,7 @@ class WSGIServer:
             body = client.recv(int(env["CONTENT_LENGTH"]))
             env["wsgi.input"] = io.StringIO(body)
         else:
-            body = client.recv()
+            body = client.recv(1024)
             env["wsgi.input"] = io.StringIO(body)
         for name, value in headers.items():
             key = "HTTP_" + name.replace("-", "_").upper()
